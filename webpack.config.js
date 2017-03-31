@@ -1,7 +1,6 @@
 'use strict';
 
 // https://www.codementor.io/tamizhvendan/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack-du107r9zr
-// https://electron.atom.io/docs/tutorial/quick-start/
 // https://webpack.js.org/
 
 var webpack = require('webpack');
@@ -15,6 +14,15 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
+  },
+  module:{
+    loaders: [
+      {
+        test: /\.jsx?/,
+        include: SRC_DIR,
+        loader: 'babel-loader'
+      }
+    ]
   }
 };
 
